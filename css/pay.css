@@ -37,7 +37,7 @@ img:hover{
     justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
-    background-color: white;
+    background-color: rgb(4, 4, 4);
     border-bottom: 1px solid black;
 }
 .menu{
@@ -53,7 +53,7 @@ img:hover{
 }
 .header a{
     display: block;
-    color: black;
+    color: rgb(250, 250, 250);
     height: 100%;
     padding: 15.5px 15px;
 }

@@ -106,7 +106,7 @@ img:hover{
     transform: scale(0.9);
 }
 .banner{
-    background: url(../image/banner.jpg);
+    background: url(../img/background.jpeg);
     height: 100vh;
     background-size: cover;
     width: 100%;
@@ -207,49 +207,6 @@ img:hover{
     align-items: center;
     text-align: center;
 }
- @media screen and (max-width : 1120px){
-    
-    .banner{
-        height: 50vh;
-        width: auto;
-        display: none;
-    }
-    .sp{
-        width: fit-content;
-        row-gap: 20px;
-        height: fit-content;
-    }
-    .sp_bt ul{
-        grid-template-columns: repeat(2,auto);
-        grid-template-rows: auto;
-    }
-    .sp_bt ul li span,
-    .sp_bt ul li p{
-        width: 100%;
-        text-align: center;
-        height: fit-content;
-    }
- }
- @media screen and (max-width : 775px){
-    .tt_t{
-        height: fit-content;
-        padding: 0;
-    }
-    .tt_bt{
-        height: fit-content;
-    }
-    .tt_bt ul li p{
-        text-align: center;
-        height: fit-content;
-    }
-    .tt_bt ul li:nth-child(3),.tt_bt ul li:nth-child(2){
-        display: none;
-    }
-    .tt_bt ul{
-        grid-template-columns: repeat(1,auto);
-        
-    }
-   
- }
+
 
 

@@ -22,7 +22,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
-    background:url(../image/banner.jpg);
+    background:url(../img/banner.jpg);
     background-size: cover;
 }
 button{
@@ -60,8 +60,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #070809;
-    background-color: #0b0b0b;
+    border: 1px solid #090807;
+    background-color: #b3853d;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -180,7 +180,7 @@ input {
 .overlay {
     background: #053a6d;
     background: -webkit-linear-gradient(to right, #25282a, #031c34);
-    background: linear-gradient(to right, #282727, #10304e);
+    background: linear-gradient(to right, #936618, #85621d);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;

@@ -7,119 +7,129 @@
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src=""></script>
 </head>
-<body class="">
+<body>
     <div class="header">
         <div class="logo">
-            <img src="../image/logo.png" alt="">
+            <img src="../img/Logo.png" alt="Juliana Studio Logo">
         </div>
         <div class="menu">
-            <li><a href="../index.html">home</a></li>
-            <li><a href="../html/productList.html">product</a></li>
-            <li><a href="../html/contact.html">contact</a></li>
-            <li><a href="../html/about.html">about</a></li>
-            <li><a href="../html/pay.html">cart</a></li>
+            <ul>
+                <li><a href="../index.html">TRANG CHỦ</a></li>
+                <li><a href="../html/productList.html">SẢN PHẨM</a></li>
+                <li><a href="../html/contact.html">LIÊN HỆ</a></li>
+                <li><a href="../html/about.html">VỀ CHÚNG TÔI</a></li>
+                <li><a href="../html/pay.html">GIỎ HÀNG</a></li>
+                <li><a href="../html/chinhsach.html">CHÍNH SÁCH</a></li>
+            </ul>
         </div>
         <div class="icon">
-                <div class="signOut">
-                    <a href="../html/login.html">
-                        LOGOUT
-                    </a>
-                </div>
+            <div class="signOut">
+                <a href="../html/login.html">ĐĂNG XUẤT</a>
+            </div>
         </div>
     </div>
+    
     <div class="ctn_product">
         <div class="ctn_product_img">
-            
+            <!-- Ảnh sản phẩm sẽ được thêm vào đây -->
+            <img src="../img/Máy Ảnh Canon EOS 6D Mark II.jpg" alt="Product Image">
         </div>
         <div class="ctn_product_detail">
             <div class="ctn_product_detail_name">
+                <h2>Máy Ảnh Canon EOS 6D Mark II</h2>
             </div>
             <div class="ctn_product_detail_price">
+                <p>Giá: 22,500,000 VND</p>
             </div>
             <div class="ctn_product_detail_btn">
-                <a href="../html/productList.html">Go shop now</a>
+                <a href="../html/productList.html">Quay lại cửa hàng</a>
             </div>
             <div class="ctn_product_detail_key-features">
-                <span>Key features</span>
+                <span>Chi tiết</span>
                 <div>
-                    <p>- Personalised sound (self-tuning EQ)</p>
-                    <p>- Active noise cancellation (ANC)</p>
+                    <p>- Độ phân giải: 24.2 MP</p>
+                    <p>- ISO: 100-40000</p>
+                    <p>- Hệ thống lấy nét kép Dual Pixel CMOS AF II</p>
                 </div>
             </div>
             <div class="ctn_product_detail_bottom">
-                <p>30-day returns, 12-month extended warranty.</p>
                 <p>‍Have questions? Visit our <a href="#"><u>Support</u></a> for more info.</p>
                 <div>
-                    <img src="../image/cdn_gobal.svg" alt="">
-                    <img src="../image/paypal.svg" alt="">
-                    <img src="../image/visa.svg" alt="">
+                    <img src="../img/cdn_gobal.svg" alt="Global Icon">
+                    <img src="../img/paypal.svg" alt="Paypal Icon">
+                    <img src="../img/visa.svg" alt="Visa Icon">
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="footer">
-        <div class="logo_end"><img src="../img/logo.png" alt="" ></div>
+        <div class="logo_end">
+            <img src="../img/Logo.png" alt="Juliana Studio Logo" style="max-width: 150px">
+        </div>
         <div class="subscribe_title">
-
+            <p>Đăng ký nhận thông tin mới nhất từ chúng tôi</p>
         </div>     
-       <div class="subscribe">
-           <div class="search">
-            <input type="text" placeholder="Input yor email">  
-            <i class="fa-regular fa-envelope"></i>
-           </div>
+        <div class="subscribe">
+            <div class="search">
+                <input type="text" placeholder="Nhập email của bạn">  
+                <i class="fa-regular fa-envelope"></i>
+            </div>
             <input type="submit" value="Subscribe">
-       </div>
-       <div class="list">
-        <div class="list_link">
-            <p><b>Product</b></p>
-            <ul>
-                <li>Features</li>
-                <li>Pricing</li>
-            </ul>
         </div>
-        <div class="list_link">
-            <p><b>Resources</b></p>
-            <ul>
-                <li>Blog</li>
-                <li>User guildes</li>
-                <li>Webinars</li>
-            </ul>
+        
+        <div class="list">
+            <div class="list_link">
+                <p><b>Về chúng tôi</b></p>
+                <ul>
+                    <li><a href="./about.html">Giới thiệu</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="list_link">
+                <p><b>Sản phẩm</b></p>
+                <ul>
+                    <li><a href="./productList.html">Máy ảnh</a></li>
+                    <li><a href="./productList.html">Hàng đang bán chạy</a></li>
+                </ul>
+            </div>
+            <div class="list_link">
+                <p><b>Các chính sách</b></p>
+                <ul>
+                    <li><a href="./Chinhsachbaohanh.html">Chính sách bảo hành</a></li>
+                    <li><a href="./chinhsachdoitra.html">Chính sách đổi trả</a></li>
+                    <li><a href="./Chinhsachbaomat.html">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="list_link">
+                <p><b>Hỗ trợ khách hàng</b></p>
+                <ul>
+                    <li><a href="./pay.html">Phương thức thanh toán</a></li>
+                    <li>Vận chuyển và giao hàng</li>
+                    <li>Hướng dẫn mua trả góp</li>
+                </ul>
+            </div>
         </div>
-        <div class="list_link">
-            <p><b>Conpany</b></p>
-            <ul>
-                <li>About us </li>
-                <li>Contact us</li>
-            </ul>
+        
+        <div class="end">
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="vi">Vietnamese</option>
+            </select>
+            <div class="end_center">
+                <p>Bản quyền © 2024 CÔNG TY TNHH JULIANA STUDIO VIỆT NAM</p>
+            </div>
+            <div class="icon_link">
+                <a href="#" style="color: rgb(85, 192, 245)"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" style="color: blue"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" style="color: rgb(101, 124, 196)"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" style="color: red"><i class="fa-brands fa-youtube"></i></a>
+            </div>
         </div>
-        <div class="list_link">
-            <p><b>Plans & Pricing</b></p>
-            <ul>
-                <li>Personal</li>
-                <li>Start up</li>
-                <li>Organization</li>
-            </ul>
-        </div>
-       </div>
-       <div class="end">
-        <select name="" id="" value="1">
-            <option value="1">English</option>
-            <option value="2">Vietnamese</option>
-        </select>
-        <div class="end_center">
-            <p>@ 2022 Brand,Inc. • Privacy • Terms • Sitemap</p>
-        </div>
-        <div class="icon_link">
-                <a href="#" style="color: rgb(85, 192, 245)"> <i class="fa-brands fa-twitter"></i></a>
-                <a href="#"style="color: blue"> <i class="fa-brands fa-facebook"></i></a>
-                <a href="#" style="color: rgb(83, 83, 185)">  <i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"style="color: red"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-       </div>
     </div>
+    
+    <!-- JavaScript -->
     <script src="../jquery/detail.js"></script>
 </body>
 </html>

@@ -7,91 +7,309 @@
     <link rel="stylesheet" href="../css/abct.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LIÊN HỆ VỚI CHÚNG TÔI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px; 
+            background-color: #000000;
+            height: 80px;
+        }
+        header img{
+        position: absolute;
+        top: 40px;
+        left: 10px;
+    }
+       
+        .header .menu li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .header .menu a {
+            text-decoration: none;
+            color: #f8f4f4;
+        }
+        .namePage {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .contact-form,
+        .map {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            height: 450px;
+            box-sizing: border-box;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .footer {
+            background-color: #000000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .subscribe {
+            max-width: 300px;
+            text-align: left;
+        }
+        .subscribe h4 {
+            margin-bottom: 10px;
+        }
+        .search {
+            display: flex;
+        }
+        .search input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+        .subscribe-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .subscribe-btn:hover {
+            background-color: #0056b3;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .list_link ul {
+            list-style: none;
+            padding: 0;
+        }
+        .social-media {
+            text-align: center;
+        }
+        .icon_link a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-bottom select {
+            padding: 8px;
+            border-radius: 4px;
+        }
 
-    <title>Document</title>
+        
+    </style>
+    <script>
+         $(document).ready(function() {
+            $('#btnDK').on('click', function() {
+                $('#myModal').modal('show');
+            });
+        $('#txtHT').on('blur', function() {
+                const ten = $(this).val();
+                const regexTen = /^[A-Z][a-z]*(\s[A-Z][a-z]*)*$/;
+                if (!regexTen.test(ten)) {
+                    $('#tbTen').text('Tên không hợp lệ');
+                } else {
+                    $('#tbTen').text('*');
+                }
+            });
+
+            $('#txtTel').on('blur', function() {
+                const tel = $(this).val();
+                const regexTel = /^0\d{3}-\d{3}-\d{3}$/;
+                if (!regexTel.test(tel)) {
+                    $('#tbTel').text('SĐT không hợp lệ');
+                } else {
+                    $('#tbTel').text('*');
+                }
+            });
+
+            $('#txtDC').on('blur', function() {
+                const email = $(this).val();
+                const regexEmail = /^[a-zA-Z0-9._%+-]+@iuh\.edu\.vn$/;
+                if (!regexEmail.test(email)) {
+                    $('#tbEmail').text('Email không hợp lệ');
+                } else {
+                    $('#tbEmail').text('*');
+                }
+            });
+
+            $('#btnSave').on('click', function() {
+                if (
+                    $("#tbTen").text() === "*" &&
+                    $("#tbTel").text() === "*" &&
+                    $("#tbEmail").text() === "*"
+                ) {
+                    const stt = $("#tbDanhSach tr").length; 
+                    const newRow = `
+                        <tr>
+                            <td>${$("#txtHT").val()}</td>
+                            <td>${$("#txtTel").val()}</td>
+                            <td>${$("#txtDC").val()}</td>
+                        </tr>`;
+                    $("#tbDanhSach").append(newRow);
+                    $("#myModal").modal("hide");
+                } else {
+                    alert('Vui lòng nhập đầy đủ và đúng các trường thông tin!');
+                }
+            });
+        });
+
+    </script>
 </head>
 <body>
     <div class="header">
         <div class="logo">
-            <img src="../image/logo.png" alt="">
+            <img src="../img/Logo.png" alt="" height="10px" width="120px" >
         </div>
-        <div class="menu">
-            <li><a href="../index.html">home</a></li>
-            <li><a href="../html/productList.html">product</a></li>
-            <li><a href="../html/contact.html">contact</a></li>
-            <li><a href="../html/about.html">about</a></li>
-            <li><a href="../html/pay.html">cart</a></li>
-        </div>
+        <ul class="menu">
+            <li><a href="../index.html">TRANG CHỦ</a></li>
+            <li><a href="../html/productList.html">SẢN PHẨM</a></li>
+            <li><a href="../html/contact.html">LIÊN HỆ</a></li>
+            <li><a href="../html/about.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="../html/pay.html">GIỎ HÀNG</a></li>
+            <li><a href="../html/chinhsach.html">CHÍNH SÁCH</a></li>
+        </ul>
         <div class="icon">
-                <div class="signOut">
-                    <a href="../html/login.html">
-                        LOGOUT
-                    </a>
-                </div>
+            <div class="signOut">
+                <a href="../html/login.html">ĐĂNG XUẤT</a>
+            </div>
         </div>
     </div>
-    <h1 class="namePage">
-        Contact
-    </h1>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31352.9634841764!2d106.60513107431643!3d10.802086899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175294f999195e7%3A0x8ba9d727d2017344!2zTmlrZSBPdXRsZXQgQ-G7mW5nIEjDsmE!5e0!3m2!1svi!2s!4v1703920665283!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    <div class="footer">
-        <div class="logo_end"><img src="../img/logo.png" alt="" ></div>
-        <div class="subscribe_title">
+    <h1 class="namePage">LIÊN HỆ VỚI CHÚNG TÔI</h1>
+    <div class="container">
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại" required>
+                <input type="email" name="email" placeholder="Nhập Email" required>
+                <textarea name="message" placeholder="Lưu ý cho người bán" rows="5" required></textarea>
+                <input type="submit" value="Liên hệ ngay">
+            </form>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62706.89886629486!2d106.64985013045367!3d10.79743153777542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f384413a6dd%3A0x6eeadd9aa9c4fca4!2sCanon%20Marketing%20Vi%E1%BB%87t%20Nam!5e0!3m2!1svi!2s!4v1731576973029!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 
-        </div>     
-       <div class="subscribe">
-           <div class="search">
-            <input type="text" placeholder="Input yor email">  
-            <i class="fa-regular fa-envelope"></i>
-           </div>
-            <input type="submit" value="Subscribe">
-       </div>
-       <div class="list">
-        <div class="list_link">
-            <p><b>Product</b></p>
-            <ul>
-                <li>Features</li>
-                <li>Pricing</li>
-            </ul>
+</div>
+</div>
+</div>
+
+<div class="footer">
+    <div class="footer-content">
+        <div class="logo_end">
+            <img src="../img/logo.png" alt="" style="max-width: 150px;">
         </div>
-        <div class="list_link">
-            <p><b>Resources</b></p>
-            <ul>
-                <li>Blog</li>
-                <li>User guildes</li>
-                <li>Webinars</li>
-            </ul>
+        <div class="subscribe">
+            
+            <div class="search">
+                <input type="text" placeholder="Nhập email:">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+            <input type="submit" value="Subscribe" class="subscribe-btn">
         </div>
-        <div class="list_link">
-            <p><b>Conpany</b></p>
-            <ul>
-                <li>About us </li>
-                <li>Contact us</li>
-            </ul>
-        </div>
-        <div class="list_link">
-            <p><b>Plans & Pricing</b></p>
-            <ul>
-                <li>Personal</li>
-                <li>Start up</li>
-                <li>Organization</li>
-            </ul>
-        </div>
-       </div>
-       <div class="end">
-        <select name="" id="" value="1">
-            <option value="1">English</option>
-            <option value="2">Vietnamese</option>
-        </select>
-        <div class="end_center">
-            <p>@ 2022 Brand,Inc. • Privacy • Terms • Sitemap</p>
-        </div>
-        <div class="icon_link">
-                <a href="#" style="color: rgb(85, 192, 245)"> <i class="fa-brands fa-twitter"></i></a>
-                <a href="#"style="color: blue"> <i class="fa-brands fa-facebook"></i></a>
-                <a href="#" style="color: rgb(83, 83, 185)">  <i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"style="color: red"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-       </div>
     </div>
+    <div class="footer-links">
+        <div class="list_link">
+            <p><b>Về chúng tôi</b></p>
+            <ul>
+                <li><a href="../html/about.html">Giới thiệu</a></li>
+                <li><a href="../html/contact.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="list_link">
+            <p><b>Sản phẩm</b></p>
+            <ul>
+                <li><a href="../html/productList.html">Máy ảnh</a></li>
+                <li><a href="../html/productList.html">Hàng đang bán chạy</a></li>
+            </ul>
+    </div>
+    <div class="list_link">
+        <p><b>Các chính sách</b></p>
+        <ul>
+            <li><a href="../html/Chinhsachbaohanh.html">Chính sách bảo hành</a></li>
+            <li><a href="../html/Chinhsachdoitra.html">Chính sách đổi trả</a></li>
+            <li><a href="../html/Chinhsachbaomat.html">Chính sách bảo mật</a></li>
+        </ul>
+    </div>
+    <div class="list_link">
+        <p><b>Hỗ trợ khách hàng</b></p>
+        <ul>
+            <li><a href="../html/pay.html">Phương thức thanh toán</a></li>
+            <li>Vận chuyển và mua hàng</li>
+            <li>Hướng dẫn mua trả góp</li>
+        </ul>
+    </div>
+</div>
+<div class="end">
+    <select name="language" id="language">
+        <option value="1">English</option>
+        <option value="2">Vietnamese</option>
+    </select>
+    <div class="end_center">
+        <p>Bản quyền © 2024 CÔNG TY TNHH JULIANA STUDIO VIỆT NAM</p>
+    </div>
+    <div class="icon_link">
+        <a href="#" style="color: rgb(85, 192, 245)"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" style="color: blue"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" style="color: rgb(101, 124, 196)"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" style="color: red"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</div>
+</div>
+
 </body>
 </html>

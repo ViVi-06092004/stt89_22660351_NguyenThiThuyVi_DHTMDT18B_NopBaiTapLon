@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>CHÍNH SÁCH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            height: 60px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            text-transform: uppercase ;
+            background-color: #070707;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+        .header a {
+            display: block;
+            color: white;
+            padding: 15.5px 15px;
+            text-decoration: none; 
+        }
+
+        .logo{
+            overflow: hidden;
+            height: 100%;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+        }
+        .logo img{
+            position: relative;
+            top: -15px;
+            height: 100px;
+        }
+        .icon{
+            display: flex;
+            padding: 10px 15px;
+            align-items: center;
+        }
+        .signOut a{
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        .signOut a:hover{
+            opacity: 0.8;
+            transform: scale(0.9);
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu{
+            display: flex;
+        }
+        .menu li{
+            position: relative;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;  
+        }
+        .menu li a::after{
+            content: '';
+            height: 5px;
+            width: 0;
+            background: white;
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            transition: 0.5s;
+        }
+        .menu li a:hover::after{
+            width: 100%;
+            transition: all 0.8s;
+        }
+        .header a{
+            display: block;
+            color: white;
+            padding: 15.5px 15px;
+        }
+
+        /* Dropdown menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 180px;
+            top: 45px;
+            border-radius: 5px;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 8px 15px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #666;
+            padding-left: 25px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 100px auto 0;
+            padding: 20px;
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            color: #85210d;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .blog-post img {
+            width: 100%; 
+            max-width: 800px; 
+            height: auto; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
+
+        .blog-post a.read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #85210d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .blog-post a.read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000000;
+            padding: 40px 20px;
+            text-align: center;
+            color: #f8f4f4;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center; /* Center the footer content */
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .subscribe {
+            max-width: 300px;
+            text-align: center; /* Center the text */
+            margin: 20px;
+        }
+        .subscribe h4 {
+            margin-bottom: 10px;
+        }
+        .search {
+            display: flex;
+            justify-content: center; /* Center the search input */
+        }
+        .search input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+        .subscribe-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .subscribe-btn:hover {
+            background-color: #0056b3;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center; /* Center the footer links */
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .list_link ul {
+            list-style: none;
+            padding: 0;
+        }
+        .social-media {
+            text-align: center;
+        }
+        .icon_link a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-bottom select {
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="../img/logo.png" alt="Logo">
+        </div><ul class="menu">
+            <li><a href="../index.html">TRANG CHỦ</a></li>
+            <li><a href="../html/productList.html">SẢN PHẨM</a></li>
+            <li><a href="../html/contact.html">LIÊN HỆ</a></li>
+            <li><a href="../html/about.html">VỀ CHÚNG TÔI</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">CHÍNH SÁCH<i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown-content">
+                    <li><a href="../html/Chinhsachbaohanh.html">Chính sách bảo hành</a></li>
+                    <li><a href="../html/Chinhsachdoitra.html">Chính sách đổi trả</a></li>
+                    <li><a href="../html/Chinhsachbaomat.html">Chính sách bảo mật</a></li>
+                </ul>
+        </ul>
+        <div class="icon">
+            <div class="signOut">
+                <a href="../html/login.html">ĐĂNG XUẤT</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="main-content">
+        <div class="blog-title">CÁC CHÍNH SÁCH</div>
+        <div class="blog-post">
+            <li>
+                <img src="../img/chính sách bảo hành.jpg" alt="">
+            </li>
+            <h2>Chính sách bảo hành</h2>
+            <p>Được thiết kế nhằm đảm bảo quyền lợi tối đa cho khách hàng khi mua sắm tại cửa hàng. Chúng tôi cam kết cung cấp dịch vụ bảo hành chất lượng, giúp khách hàng yên tâm sử dụng các sản phẩm của Juliana Studio...</p>
+            <a href="../html/chinhsachbaohanh.html" class="read-more">Đọc tiếp</a>
+        </div>
+        <div class="blog-post">
+            <li>
+                <img src="../img/chính sách đổi trả.jpg" alt="">
+            </li>
+            <h2>Chính sách đổi trả</h2>
+            <p>Được xây dựng để đảm bảo quyền lợi cho khách hàng và mang lại sự hài lòng tối đa khi mua sắm. Chúng tôi cam kết cung cấp chính sách đổi trả linh hoạt, minh bạch, và công bằng, giúp khách hàng có thể yên tâm về quyết định mua sắm của mình...</p>
+            <a href="../html/Chinhsachdoitra.html" class="read-more">Đọc tiếp</a>
+        </div>
+        <div class="blog-post">
+            <li>
+                <img src="../img/Chính sách bảo mật.jpg" alt="">
+            </li>
+            <h2>Chính sách bảo mật</h2>
+            <p>Cam kết bảo vệ thông tin cá nhân của khách hàng và duy trì sự riêng tư trong suốt quá trình giao dịch và sử dụng dịch vụ tại website của chúng tôi...</p>
+            <a href="../html/Chinhsachbaomat.html" class="read-more">Đọc tiếp</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="logo_end">
+                <img src="../img/logo.png" alt="" style="max-width: 150px">
+            </div>
+            <div class="subscribe">
+                <div class="search">
+                    <input type="text" placeholder="Nhập email:">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <input type="submit" value="Subscribe" class="subscribe-btn">
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="list_link">
+                <p><b>Về chúng tôi</b></p>
+                <ul>
+                    <li><a href="../html/about.html">Giới thiệu</a></li>
+                    <li><a href="../html/contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="list_link">
+                <p><b>Sản phẩm</b></p>
+                <ul>
+                    <li><a href="../html/productList.html">Sản phẩm</a></li>
+                    <li><a href="../html/productList.html">Hàng đang bán chạy</a></li>
+                </ul>
+        </div>
+        <div class="list_link">
+            <p><b>Các chính sách</b></p>
+            <ul>
+                <li><a href="../html/Chinhsachbaohanh.html">Chính sách bảo hành</a></li>
+                <li><a href="../html/Chinhsachdoitra.html">Chính sách đổi trả</a></li>
+                <li><a href="../html/Chinhsachbaomat.html">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+
+        <div class="list_link">
+            <p><b>Hỗ trợ khách hàng</b></p>
+            <ul>
+                <li><a href="../html/Pay.html">Phương thức thanh toán</a></li>
+                <li>Vận chuyển và giao hàng</li>
+                <li>Hướng dẫn mua trả góp</li>
+            </ul>
+        </div>
+    </div>
+    <div class="end">
+        <select name="language" id="language">
+            <option value="1">English</option>
+            <option value="2">Vietnamese</option>
+        </select>
+        <div class="end_center">
+            <p>Bản quyền © 2024 CÔNG TY TNHH JULIANA STUDIO VIỆT NAM</p>
+        </div>
+        <div class="icon_link">
+            <a href="#" style="color: rgb(85, 192, 245)"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" style="color: blue"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="color: rgb(101, 124, 196)"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" style="color: red"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
